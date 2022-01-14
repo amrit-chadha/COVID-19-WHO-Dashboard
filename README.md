@@ -2,29 +2,22 @@
 # COVID-19
 A web dashboard built in Python and [Dash](https://dash.plot.ly/), with charts made in [Plotly](https://plot.ly/). The data is provided by [Johns Hopkins Center for Systems Science and Engineering](https://github.com/CSSEGISandData/COVID-19) and automatically updates to the dashboard nightly.
 
- ![dashboard](images/screenshot.png)
-
- ---
 
  ## Focus selection
 
  The dashboard can be set on the pandemic globally, or with a focus on either the United States, Europe, or China through the radio buttons on the top:
 
- ![focus](images/focus_select.png)
-
  This button changes the underlying data for each displayed chart to reflect the selected region.
 
  Each evening at roughly 5pm Eastern time, Johns Hopkins updates their data source with new cases from the day. My dashboard automatically runs an ETL script to download the new data, process it into the format required by the dashboard, and upload it to Heroku. The headline here declares when the data was most recently updated.
 
- ---
+
 
  ## Components
 
 There are five main components of the dashboard: the indicators, the infections rates for the selected region, the case analysis by sub-region, the infection map, and the trajectory chart.
 
 ### Indicators
-
-![indicators](images/indicators.png)
 
 There are four indicators, each consisting of the current value for the indicator, in red, and the change from yesterday, in blue for increasing values and green for decreasing.
 
@@ -36,7 +29,6 @@ It is calculated as `ACTIVE = CONFIRMED - DEATHS - RECOVERED`
 
 ### Regional charts
 
-![regional charts](images/regional.png)
 There are two regional charts, described below. These charts can display absolute infection numbers within the region, or numbers relative to the region's population. Selecting the radio button for `Values per 100,000 of population` normalizes each curve by population and can make it easier to compare the infection rates of regions with vastly different population counts. Selecting `Total values` returns the charts to absolute numbers.
 
 #### Infections
